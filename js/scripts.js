@@ -1,0 +1,70 @@
+document.addEventListener('DOMContentLoaded', function(){
+  // Atualiza anos no footer
+  const y = new Date().getFullYear();
+  document.getElementById('year')?.textContent = y;
+  document.getElementById('year2')?.textContent = y;
+  document.getElementById('year3')?.textContent = y;
+
+  // Máscaras simples para CPF, Telefone e CEP
+  const cpf = document.getElementById('cpf');
+  const tel = document.getElementById('telefone');
+  const cep = document.getElementById('cep');
+
+  function setCursorEnd(el){ setTimeout(()=> el.selectionStart = el.selectionEnd = el.value.length,0) }
+
+  if(cpf){
+    cpf.addEventListener('input', function(){
+      let v = this.value.replace(/\D/g,'').slice(0,11);
+      v = v.replace(/(\d{3})(\d)/,'$1.$2');
+      v = v.replace(/(\d{3})(\d)/,'$1.$2');
+      v = v.replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+      this.value = v;
+      setCursorEnd(this);
+    });
+  }
+
+  if(tel){
+    tel.addEventListener('input', function(){
+      let v = this.value.replace(/\D/g,'').slice(0,11);
+      if(v.length <= 10){
+        v = v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3').trim();
+      } else {
+        v = v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3').trim();
+      }
+      this.value = v;
+      setCursorEnd(this);
+    });
+  }
+
+  if(cep){
+    cep.addEventListener('input', function(){
+      let v = this.value.replace(/\D/g,'').slice(0,8);
+      v = v.replace(/(\d{5})(\d)/,'$1-$2');
+      this.value = v;
+      setCursorEnd(this);
+    });
+  }
+
+  // Validação extra do formulário (simples)
+  const form = document.getElementById('cadastroForm');
+  const msg = document.getElementById('form-messages');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.innerHTML = '';
+      const errors = [];
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      if(nome.length < 3) errors.push('Informe o nome completo.');
+      if(!/^\S+@\S+\.\S+$/.test(email)) errors.push('E-mail inválido.');
+      if(errors.length){
+        msg.innerHTML = '<ul><li>'+errors.join('</li><li>')+'</li></ul>';
+        msg.style.color = 'crimson';
+        return;
+      }
+      msg.textContent = 'Cadastro enviado com sucesso (simulado).';
+      msg.style.color = 'green';
+      form.reset();
+    });
+  }
+});
