@@ -1,56 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projetos — ONG Exemplo</title>
-  <meta name="description" content="Conheça os projetos da ONG Exemplo e oportunidades de voluntariado." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos — ONG Esperança Viva</title>
+
+  <!-- Fonte bonita -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Ir para o conteúdo</a>
-
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Logo ONG Exemplo" class="logo">
-      <nav aria-label="Navegação principal">
-        <ul class="nav">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastre-se</a></li>
-        </ul>
-      </nav>
+      <div class="logo">ONG Esperança Viva</div>
+      <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
     </div>
   </header>
 
-  <main id="main" class="container" role="main">
-    <h1>Projetos</h1>
-    <p>Explore projetos por categoria e participe como voluntário ou doador.</p>
+  <main class="container">
+    <section>
+      <h2 class="section-title">Nossos Projetos</h2>
+      <p>Conheça as principais ações que desenvolvemos em prol da comunidade.</p>
 
-    <section aria-labelledby="projects-list">
-      <h2 id="projects-list">Lista de Projetos</h2>
-
-      <article class="project-card" aria-labelledby="p1-title">
-        <img src="assets/images/projeto-1.jpg" alt="Crianças em atividade educativa" loading="lazy">
-        <h3 id="p1-title">Projeto Educação +</h3>
-        <p>Capacitação de jovens para mercado de trabalho.</p>
-        <p><strong>Meta:</strong> R$ 50.000</p>
-        <div class="project-actions">
-          <a href="cadastro.html" class="btn">Quero ajudar</a>
-          <a href="#" class="link-more">Saiba mais</a>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/images/projeto1.jpg" alt="Distribuição de alimentos" class="card-img">
+          <h3>Projeto Alimentar com Amor</h3>
+          <p>Distribuímos cestas básicas e refeições para famílias em situação de vulnerabilidade social.</p>
         </div>
-      </article>
 
-      <!-- Replicar mais artigos para outros projetos -->
+        <div class="card">
+          <img src="assets/images/projeto2.jpg" alt="Crianças estudando" class="card-img">
+          <h3>Educação que Transforma</h3>
+          <p>Oferecemos reforço escolar gratuito e oficinas de leitura para crianças e adolescentes.</p>
+        </div>
+
+        <div class="card">
+          <img src="assets/images/projeto3.jpg" alt="Mutirão ambiental" class="card-img">
+          <h3>Verde Esperança</h3>
+          <p>Promovemos ações ambientais, como plantio de árvores e campanhas de limpeza urbana.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© <span id="year2"></span> ONG Exemplo</p>
-    </div>
+  <footer class="site-footer">
+    © 2025 ONG Esperança Viva — Todos os direitos reservados.
   </footer>
-
-  <script src="js/scripts.js" defer></script>
 </body>
 </html>
