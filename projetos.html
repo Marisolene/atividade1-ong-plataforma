@@ -1,38 +1,55 @@
-<main>
-  <section>
-    <h2>Faça seu Cadastro</h2>
-    <p>Preencha o formulário abaixo e faça parte das nossas ações solidárias!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos — ONG Esperança Viva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">ONG Esperança Viva</div>
+      <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <form>
-      <label for="nome">Nome completo</label>
-      <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+  <main class="container">
+    <section>
+      <h2 class="section-title">Nossos Projetos</h2>
+      <p>Conheça as principais ações que desenvolvemos em prol da comunidade.</p>
 
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/images/projeto1.jpg" alt="Distribuição de alimentos" class="card-img">
+          <h3>Projeto Alimentar com Amor</h3>
+          <p>Distribuímos cestas básicas e refeições para famílias em situação de vulnerabilidade social.</p>
+        </div>
 
-      <label for="telefone">Telefone</label>
-      <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+        <div class="card">
+          <img src="assets/images/projeto2.jpg" alt="Crianças estudando" class="card-img">
+          <h3>Educação que Transforma</h3>
+          <p>Oferecemos reforço escolar gratuito e oficinas de leitura para crianças e adolescentes.</p>
+        </div>
 
-      <label for="cpf">CPF</label>
-      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+        <div class="card">
+          <img src="assets/images/projeto3.jpg" alt="Mutirão ambiental" class="card-img">
+          <h3>Verde Esperança</h3>
+          <p>Promovemos ações ambientais, como plantio de árvores e campanhas de limpeza urbana.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <label for="data">Data de Nascimento</label>
-      <input type="date" id="data" name="data" required>
-
-      <label for="endereco">Endereço</label>
-      <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
-
-      <label for="cep">CEP</label>
-      <input type="text" id="cep" name="cep" placeholder="00000-000" required>
-
-      <label for="cidade">Cidade</label>
-      <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
-
-      <label for="estado">Estado</label>
-      <input type="text" id="estado" name="estado" placeholder="Digite seu estado" required>
-
-      <br>
-      <button type="submit">Enviar Cadastro</button>
-    </form>
-  </section>
-</main>
+  <footer class="site-footer">
+    © 2025 ONG Esperança Viva — Todos os direitos reservados.
+  </footer>
+</body>
+</html>
