@@ -154,9 +154,8 @@ body {
 }
 /* Ajusta todas as imagens dentro dos cards */
 .card-img {
-  width: 50%;          /* ocupa toda a largura do card */
-  height: 200px;        /* define uma altura fixa */
-  object-fit: cover;    /* corta a imagem proporcionalmente, sem distorcer */
+  width: 200%;          /* ocupa toda a largura do card */
+  height: 100px;        /* define uma altura fixa */
   border-radius: 10px;  /* opcional — deixa os cantos arredondados */
 }
 
