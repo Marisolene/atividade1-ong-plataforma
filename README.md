@@ -2,8 +2,8 @@
 
 Projeto desenvolvido para a disciplina: Entrega I — Fundamentos e Estruturação.
 
-## Como abrir localmente
-Basta abrir `index.html` no navegador ou usar `python -m http.server 8000` na pasta do projeto e acessar `http://localhost:8000`.
+#Link site
+https://marisolene.github.io/atividade1-ong-plataforma/index.html
 
 ## Arquivos importantes
 - index.html
