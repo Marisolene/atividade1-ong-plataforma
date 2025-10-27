@@ -1,60 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro — ONG Esperança Viva</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">ONG Esperança Viva</div>
-      <ul class="nav">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html" class="active">Cadastro</a></li>
-      </ul>
-    </div>
-  </header>
+<style>
+  .form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+    max-width: 400px; /* Largura máxima do formulário */
+    margin-top: 20px;
+  }
 
-  <main class="container">
-    <section class="form-section">
-      <h2 class="section-title">Cadastre-se como Voluntário</h2>
-      <p>Faça parte dessa rede de solidariedade. Preencha o formulário abaixo e venha transformar vidas conosco!</p>
+  .form-card label {
+    font-weight: 600;
+  }
 
-      <form class="form-card">
-        <label>Nome Completo</label>
-        <input type="text" placeholder="Digite seu nome" required>
+  .form-card input,
+  .form-card select,
+  .form-card textarea,
+  .form-card button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-        <label>E-mail</label>
-        <input type="email" placeholder="exemplo@email.com" required>
+  .form-card button {
+    background-color: #2a7b2a;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
 
-        <label>Telefone</label>
-        <input type="tel" placeholder="(11) 99999-9999" required>
-
-        <label>Área de Interesse</label>
-        <select required>
-          <option value="">Selecione...</option>
-          <option>Educação</option>
-          <option>Meio Ambiente</option>
-          <option>Ação Social</option>
-          <option>Eventos</option>
-        </select>
-
-        <label>Mensagem</label>
-        <textarea rows="4" placeholder="Conte um pouco sobre você"></textarea>
-
-        <button type="submit" class="cta">Enviar Cadastro</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    © 2025 ONG Esperança Viva — Todos os direitos reservados.
-  </footer>
-</body>
-</html>
+  .form-card button:hover {
+    background-color: #1e5c1e;
+  }
+</style>
