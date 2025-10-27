@@ -152,3 +152,11 @@ body {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+/* Ajusta todas as imagens dentro dos cards */
+.card-img {
+  width: 100%;          /* ocupa toda a largura do card */
+  height: 200px;        /* define uma altura fixa */
+  object-fit: cover;    /* corta a imagem proporcionalmente, sem distorcer */
+  border-radius: 10px;  /* opcional — deixa os cantos arredondados */
+}
+
