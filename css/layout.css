@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Layout geral com grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Cabeçalho fixo */
+header {
+  grid-column: 1 / -1;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Rodapé */
+footer {
+  grid-column: 1 / -1;
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Breakpoints responsivos */
+@media (max-width: 1024px) {
+  .container { grid-template-columns: repeat(8, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { grid-template-columns: repeat(4, 1fr); }
+  header { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .container { grid-template-columns: repeat(2, 1fr); }
+}
