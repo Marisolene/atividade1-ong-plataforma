@@ -5,70 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG Esperança Viva</title>
 
-  <!-- Fonte bonita -->
+  <!-- Fontes e CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts -->
+  <script defer src="js/scripts.js"></script>
 </head>
 <body>
+
   <!-- Cabeçalho -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">ONG Esperança Viva</div>
-      <ul class="nav">
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
+      <h1 class="logo">ONG Esperança Viva</h1>
+      <button class="menu-btn">☰</button>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <!-- Conteúdo principal -->
   <main class="container">
-    <!-- Seção principal (hero) -->
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-text">
           <h2>Transformando vidas por meio da solidariedade</h2>
           <p>A ONG Esperança Viva atua há mais de 10 anos promovendo inclusão social e oportunidades para comunidades carentes.</p>
-          <a href="projetos.html" class="cta">Conheça nossos projetos</a>
+          <a href="projetos.html" class="btn">Conheça nossos projetos</a>
         </div>
 
-        <!-- Imagem principal -->
         <div class="hero-image">
           <img src="assets/images/Projeto1.jpg" alt="Voluntários ajudando em projeto social" class="hero-img">
         </div>
       </div>
     </section>
 
-    <!-- Projetos resumidos -->
+    <!-- PROJETOS EM DESTAQUE -->
     <section>
       <h3 class="section-title">Projetos em Destaque</h3>
       <div class="grid">
-        <div class="card">
+        <article class="card">
           <img src="assets/images/Projeto2.jpg" alt="Distribuição de alimentos" class="card-img">
           <h4>Projeto Alimentar com Amor</h4>
           <p>Distribuímos cestas básicas e refeições para famílias em situação de vulnerabilidade social.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <img src="assets/images/Projeto3.jpg" alt="Crianças estudando" class="card-img">
           <h4>Educação que Transforma</h4>
           <p>Oferecemos reforço escolar gratuito e oficinas de leitura para crianças e adolescentes.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <img src="assets/images/Projeto4.jpg" alt="Mutirão ambiental" class="card-img">
           <h4>Verde Esperança</h4>
           <p>Promovemos ações ambientais, como plantio de árvores e campanhas de limpeza urbana.</p>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- Missão, Visão e Valores -->
+    <!-- MISSÃO, VISÃO E VALORES -->
     <section>
       <h3 class="section-title">Missão, Visão e Valores</h3>
       <div class="card">
@@ -80,7 +91,7 @@
       </div>
     </section>
 
-    <!-- Contato -->
+    <!-- CONTATO -->
     <section>
       <h3 class="section-title">Entre em Contato</h3>
       <div class="card">
@@ -89,55 +100,27 @@
         <p><strong>Endereço:</strong> Rua da Esperança, 100 - São Paulo/SP</p>
       </div>
     </section>
+
+    <!-- MÍDIA -->
+    <section>
+      <h3 class="section-title">Galeria de Impacto</h3>
+      <div class="grid">
+        <video class="card" controls width="100%">
+          <source src="assets/images/video-projeto.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos.
+        </video>
+
+        <div class="card">
+          <iframe width="100%" height="215" src="https://www.youtube.com/embed/2RCA8v-r1k0" title="Campanha Esperança Viva" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Rodapé -->
   <footer class="site-footer">
-    © 2025 ONG Esperança Viva — Todos os direitos reservados.
+    <p>© <span id="year"></span> ONG Esperança Viva — Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma ONG</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/forms.css">
-  <script defer src="js/scripts.js"></script>
-</head>
-<body>
-  <header>
-    <h1>Plataforma ONG</h1>
-    <button class="menu-btn">☰</button>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container">
-    <section class="card" style="grid-column: span 6;">
-      <h2>Bem-vindo à nossa ONG</h2>
-      <p>Transformando vidas através de projetos sociais.</p>
-      <a href="projetos.html" class="btn">Ver Projetos</a>
-    </section>
-    <section class="card" style="grid-column: span 6;">
-      <h2>Cadastre-se</h2>
-      <p>Junte-se a nós e faça parte da mudança!</p>
-      <a href="cadastro.html" class="btn">Cadastrar</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Plataforma ONG. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
-
