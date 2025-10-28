@@ -1,4 +1,6 @@
-# Atividade 1 - ONG Plataforma
+# Atividade - ONG Plataforma
+
+Atividades 1 e 2.
 
 Projeto desenvolvido para a disciplina: Entrega I — Fundamentos e Estruturação.
 
