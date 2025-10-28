@@ -4,12 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro — ONG Esperança Viva</title>
+
+  <!-- Fonte e estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Script com máscaras e validação -->
+  <script defer src="js/scripts.js"></script>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">ONG Esperança Viva</div>
@@ -21,40 +27,89 @@
     </div>
   </header>
 
+  <!-- Conteúdo principal -->
   <main class="container">
     <section class="form-section">
       <h2 class="section-title">Cadastre-se como Voluntário</h2>
-      <p>Faça parte dessa rede de solidariedade. Preencha o formulário abaixo e venha transformar vidas conosco!</p>
+      <p>Faça parte dessa rede de solidariedade! Preencha o formulário abaixo e venha transformar vidas conosco.</p>
 
-      <form class="form-card">
-        <label>Nome Completo</label>
-        <input type="text" placeholder="Digite seu nome" required>
+      <form id="cadastroForm" class="form-card">
+        <!-- DADOS PESSOAIS -->
+        <fieldset>
+          <legend>Dados Pessoais</legend>
 
-        <label>E-mail</label>
-        <input type="email" placeholder="exemplo@email.com" required>
+          <label for="nome">Nome Completo*</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
 
-        <label>Telefone</label>
-        <input type="tel" placeholder="(11) 99999-9999" required>
+          <label for="cpf">CPF*</label>
+          <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" maxlength="14" required>
 
-        <label>Área de Interesse</label>
-        <select required>
-          <option value="">Selecione...</option>
-          <option>Educação</option>
-          <option>Meio Ambiente</option>
-          <option>Ação Social</option>
-          <option>Eventos</option>
-        </select>
+          <label for="nascimento">Data de Nascimento*</label>
+          <input id="nascimento" name="nascimento" type="date" required>
+        </fieldset>
 
-        <label>Mensagem</label>
-        <textarea rows="4" placeholder="Conte um pouco sobre você"></textarea>
+        <!-- CONTATO -->
+        <fieldset>
+          <legend>Contato</legend>
+
+          <label for="email">E-mail*</label>
+          <input id="email" name="email" type="email" placeholder="exemplo@email.com" required>
+
+          <label for="telefone">Telefone*</label>
+          <input id="telefone" name="telefone" type="tel" placeholder="(11) 99999-9999" maxlength="15" required>
+        </fieldset>
+
+        <!-- ENDEREÇO -->
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <label for="cep">CEP*</label>
+          <input id="cep" name="cep" type="text" placeholder="00000-000" maxlength="9" required>
+
+          <label for="endereco">Rua*</label>
+          <input id="endereco" name="endereco" type="text" placeholder="Digite o nome da rua" required>
+
+          <label for="numero">Número*</label>
+          <input id="numero" name="numero" type="text" placeholder="Ex: 123" required>
+
+          <label for="bairro">Bairro*</label>
+          <input id="bairro" name="bairro" type="text" placeholder="Digite o bairro" required>
+
+          <label for="cidade">Cidade*</label>
+          <input id="cidade" name="cidade" type="text" placeholder="Digite a cidade" required>
+
+          <label for="estado">Estado*</label>
+          <input id="estado" name="estado" type="text" placeholder="Ex: SP" maxlength="2" required>
+        </fieldset>
+
+        <!-- PARTICIPAÇÃO -->
+        <fieldset>
+          <legend>Participação</legend>
+
+          <label for="interesse">Área de Interesse*</label>
+          <select id="interesse" name="interesse" required>
+            <option value="">Selecione...</option>
+            <option>Educação</option>
+            <option>Meio Ambiente</option>
+            <option>Ação Social</option>
+            <option>Eventos</option>
+            <option>Doações</option>
+          </select>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre você e sua motivação."></textarea>
+        </fieldset>
+
+        <div id="form-messages"></div>
 
         <button type="submit" class="cta">Enviar Cadastro</button>
       </form>
     </section>
   </main>
 
+  <!-- Rodapé -->
   <footer class="site-footer">
-    © 2025 ONG Esperança Viva — Todos os direitos reservados.
+    © <span id="year">2025</span> ONG Esperança Viva — Todos os direitos reservados.
   </footer>
 </body>
 </html>
