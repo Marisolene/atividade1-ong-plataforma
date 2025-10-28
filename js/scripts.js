@@ -68,3 +68,11 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 });
+// --- MENU RESPONSIVO ---
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('nav ul');
+
+menuBtn?.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
