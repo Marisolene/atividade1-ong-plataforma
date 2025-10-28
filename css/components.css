@@ -1,0 +1,48 @@
+/* 🟦 Botões */
+button, .btn {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--font-base);
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background: var(--color-primary-light);
+}
+
+/* 🔘 Estados */
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* 🧩 Cards */
+.card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* 🏷 Badges */
+.badge {
+  background: var(--color-accent);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--font-small);
+  display: inline-block;
+}
