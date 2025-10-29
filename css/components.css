@@ -4,10 +4,10 @@ button, .btn {
   color: white;
   padding: var(--space-1) var(--space-2);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-default);
   cursor: pointer;
   font-size: var(--font-base);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
 }
 
 button:hover, .btn:hover {
@@ -24,13 +24,13 @@ button:disabled {
 .card {
   background: white;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: var(--radius-default);
   padding: var(--space-3);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-default);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  transition: transform 0.2s ease;
+  transition: var(--transition-base);
 }
 
 .card:hover {
@@ -46,3 +46,14 @@ button:disabled {
   font-size: var(--font-small);
   display: inline-block;
 }
+
+/* 🌟 Novo: alertas e caixas de destaque */
+.alert {
+  padding: var(--space-2);
+  border-radius: var(--radius-default);
+  margin: var(--space-2) 0;
+}
+
+.alert-success { background: #c6f6d5; color: #22543d; }
+.alert-error { background: #fed7d7; color: #742a2a; }
+.alert-info { background: #bee3f8; color: #2a4365; }
