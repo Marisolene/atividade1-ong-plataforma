@@ -24,6 +24,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-default);
 }
 
 /* Rodapé */
@@ -36,7 +40,7 @@ footer {
   margin-top: var(--space-3);
 }
 
-/* Breakpoints responsivos */
+/* 📱 Breakpoints responsivos */
 @media (max-width: 1024px) {
   .container { grid-template-columns: repeat(8, 1fr); }
 }
