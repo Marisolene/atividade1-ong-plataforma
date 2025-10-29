@@ -1,59 +1,36 @@
-/* 🟦 Botões */
-button, .btn {
-  background: var(--color-primary);
-  color: white;
-  padding: var(--space-1) var(--space-2);
-  border: none;
-  border-radius: var(--radius-default);
-  cursor: pointer;
-  font-size: var(--font-base);
-  transition: var(--transition-base);
+/* cards, grid and small components */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--gap);
 }
-
-button:hover, .btn:hover {
-  background: var(--color-primary-light);
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  transition:transform var(--transition), box-shadow var(--transition);
 }
+.card:hover{transform:translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.12);}
 
-/* 🔘 Estados */
-button:disabled {
-  background: gray;
-  cursor: not-allowed;
+.card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.card h3{margin:0 0 8px 0;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.4}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--primary);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-weight:600;
+  box-shadow: 0 6px 16px rgba(24,111,106,0.12);
 }
+.btn.secondary{background:#fff;color:var(--primary);border:1px solid rgba(24,111,106,0.08)}
+.btn:active{transform:translateY(1px)}
 
-/* 🧩 Cards */
-.card {
-  background: white;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-default);
-  padding: var(--space-3);
-  box-shadow: var(--shadow-default);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  transition: var(--transition-base);
-}
+/* video card */
+.video-wrapper{border-radius:10px;overflow:hidden;background:#000}
+.video-wrapper video{width:100%;display:block}
 
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* 🏷 Badges */
-.badge {
-  background: var(--color-accent);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: var(--font-small);
-  display: inline-block;
-}
-
-/* 🌟 Novo: alertas e caixas de destaque */
-.alert {
-  padding: var(--space-2);
-  border-radius: var(--radius-default);
-  margin: var(--space-2) 0;
-}
-
-.alert-success { background: #c6f6d5; color: #22543d; }
-.alert-error { background: #fed7d7; color: #742a2a; }
-.alert-info { background: #bee3f8; color: #2a4365; }
+/* small helpers */
+.section-title{font-size:1.2rem;margin:0 0 12px 0;color:var(--primary-700)}
+.kv{display:flex;gap:12px;align-items:center}
+.badge{background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.8rem}
