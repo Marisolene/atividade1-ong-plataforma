@@ -1,67 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projetos — ONG Esperança Viva</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Fonte e Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f7f8fa;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1b5e20;
+      color: #fff;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+      object-fit: cover;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #2e7d32;
+      color: #e8f5e9;
+    }
+
+    /* Menu Responsivo */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin-right: auto;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1b5e20;
+        text-align: center;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #1b5e20;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .cta {
+      background-color: #2e7d32;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html"><img src="../assets/images/logo.png" alt="Logo ONG" class="logo" /></a>
-      <nav aria-label="Menu principal">
-        <ul class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-      </nav>
+  <!-- Cabeçalho -->
+  <header>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="logo-container">
+      <img src="assets/images/logo.png" alt="Logo ONG">
+      <h1>ONG Esperança Viva</h1>
     </div>
+    <nav id="nav-menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html" class="active">Projetos</a>
+      <a href="cadastro.html">Cadastro</a>
+    </nav>
   </header>
 
-  <main id="main" class="container">
-    <h1>Projetos sociais</h1>
-    <p>Conheça nossos projetos, voluntariado e formas de doar.</p>
+  <!-- Conteúdo principal -->
+  <main>
+    <section>
+      <h2 class="section-title">Nossos Projetos</h2>
+      <p>Conheça as principais ações que desenvolvemos em prol da comunidade e descubra como você pode participar.</p>
 
-    <section aria-labelledby="lista-projetos">
-      <h2 id="lista-projetos">Projetos em destaque</h2>
-      <ul class="projects-grid" role="list">
-        <li class="card">
-          <img src="../assets/images/projeto1.jpg" alt="Voluntários distribuindo alimentos" />
-          <h3>Projeto Alimentos</h3>
-          <p>Descrição resumida do projeto, objetivos e indicadores.</p>
-          <a class="btn" href="#donate" aria-label="Saiba mais sobre Projeto Alimentos">Saiba mais</a>
-        </li>
-        <li class="card">
-          <img src="../assets/images/projeto2.jpg" alt="Crianças em aula de reforço" />
-          <h3>Projeto Educação</h3>
-          <p>Descrição resumida do projeto, objetivos e indicadores.</p>
-          <a class="btn" href="#donate">Saiba mais</a>
-        </li>
-      </ul>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/images/Projeto2.jpg" alt="Distribuição de alimentos" class="card-img">
+          <h3>Projeto Alimentar com Amor</h3>
+          <p>Distribuímos cestas básicas e refeições para famílias em situação de vulnerabilidade social.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/Projeto3.jpg" alt="Crianças estudando" class="card-img">
+          <h3>Educação que Transforma</h3>
+          <p>Oferecemos reforço escolar gratuito e oficinas de leitura para crianças e adolescentes.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/Projeto4.jpg" alt="Mutirão ambiental" class="card-img">
+          <h3>Verde Esperança</h3>
+          <p>Promovemos ações ambientais, como plantio de árvores e campanhas de limpeza urbana.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="donate" aria-labelledby="doe-title">
-      <h2 id="doe-title">Como doar</h2>
-      <p>Explicação sobre doações online, campanhas e prestação de contas.</p>
-      <form class="donation-form" action="#" method="post" novalidate>
-        <label for="valor">Valor (R$)</label>
-        <input id="valor" name="valor" type="number" min="1" required />
-        <label for="nome">Nome no cartão</label>
-        <input id="nome" name="nome" type="text" required />
-        <button class="btn" type="submit">Doar</button>
-      </form>
+    <section>
+      <h2 class="section-title">Seja um Voluntário</h2>
+      <div class="card">
+        <p>Junte-se à nossa equipe e contribua com seu tempo e talento em nossos projetos.</p>
+        <a href="cadastro.html" class="cta">Cadastre-se como voluntário</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Veja Nossas Ações</h2>
+      <div class="card" style="text-align:center;">
+        <video width="100%" controls poster="assets/images/Projeto1.jpg">
+          <source src="assets/videos/acao-social.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year2"></span> ONG Esperança Viva</p>
-    </div>
+  <footer>
+    © 2025 ONG Esperança Viva — Todos os direitos reservados.
   </footer>
 
-  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-menu");
+    toggle.addEventListener("click", () => nav.classList.toggle("active"));
+  </script>
 </body>
 </html>
