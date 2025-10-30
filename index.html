@@ -48,3 +48,59 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ONG Esperança Viva</title>
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+
+  <!-- meta para melhorar acessibilidade -->
+  <meta name="description" content="ONG Esperança Viva - projetos sociais e voluntariado">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <img src="assets/images/hero.jpg" alt="Logo ONG" id="brand-logo">
+      <h1>ONG Esperança Viva</h1>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Menu principal">
+      <a href="#/" data-route>Início</a>
+      <a href="#/projetos" data-route>Projetos</a>
+      <a href="#/cadastro" data-route>Cadastro</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+  </header>
+
+  <!-- mobile menu (injetado pelo JS) -->
+  <div id="mobile-menu" style="display:none"></div>
+
+  <!-- SPA root -->
+  <main id="app" class="container" role="main"></main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> ONG Esperança Viva — Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- scripts (ordem importa) -->
+  <script src="js/storage.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/formModule.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
