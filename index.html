@@ -1,79 +1,296 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG Esperança Viva — Início</title>
-  <meta name="description" content="ONG Esperança Viva — missão, projetos e como ajudar." />
-  <link rel="stylesheet" href="../css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONG Esperança Viva</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos gerais -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ====== BASE ====== */
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* ====== CABEÇALHO ====== */
+    header {
+      background-color: #1b5e20;
+      color: #fff;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
+      display: none;
+    }
+
+    .site-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: #2e7d32;
+      color: #e8f5e9;
+    }
+
+    /* ====== MENU RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1b5e20;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        padding: 10px;
+      }
+    }
+
+    /* ====== CONTEÚDO ====== */
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 40px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      color: #1b5e20;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .intro img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    /* ====== SEÇÕES ====== */
+    .section {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    .section h2 {
+      color: #1b5e20;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #2e7d32;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background-color: #1b5e20;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ====== ANIMAÇÃO ====== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-  <header class="site-header" role="banner">
-    <div class="container">
-      <img src="../assets/images/logo.png" alt="Logo ONG Esperança Viva" class="logo" />
-      <nav role="navigation" aria-label="Menu principal">
-        <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-        <ul id="main-nav" class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- ====== CABEÇALHO ====== -->
+  <header>
+    <h1 class="site-title">ONG Esperança Viva</h1>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav id="nav-menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cadastro.html">Cadastro</a>
+    </nav>
   </header>
 
-  <main id="main" tabindex="-1" role="main">
-    <section class="hero" aria-label="Missão">
-      <div class="container">
-        <h1>Transformando vidas com ações locais</h1>
-        <p>Conheça nossos projetos, apoie e participe como voluntário.</p>
-        <a class="btn" href="projetos.html">Ver projetos</a>
+  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+  <main>
+    <section class="intro">
+      <div>
+        <h1>Transformando vidas por meio da solidariedade</h1>
+        <p>A <strong>ONG Esperança Viva</strong> atua há mais de 10 anos promovendo inclusão social e oportunidades para comunidades carentes.</p>
+        <a href="projetos.html" class="btn">Conheça nossos projetos</a>
+      </div>
+      <img src="./assets/images/Hero.jpg" alt="Ação solidária">
+    </section>
+
+    <section class="section">
+      <h2>Projetos em Destaque</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="./assets/images/Projeto1.jpg" alt="Doação de alimentos">
+          <h3>Projeto Alimentar com Amor</h3>
+          <p>Distribuímos cestas básicas e refeições para famílias em situação de vulnerabilidade social.</p>
+        </div>
+        <div class="card">
+          <img src="./assets/images/Projeto2.jpg" alt="Educação para todos">
+          <h3>Educação que Transforma</h3>
+          <p>Reforço escolar gratuito e oficinas educativas para crianças e adolescentes.</p>
+        </div>
+        <div class="card">
+          <img src="./assets/images/Projeto3.jpg" alt="Ação ambiental">
+          <h3>Verde Esperança</h3>
+          <p>Campanhas de conscientização e mutirões de limpeza em áreas públicas.</p>
+        </div>
       </div>
     </section>
 
-    <section class="about container" aria-labelledby="sobre-title">
-      <h2 id="sobre-title">Quem somos</h2>
-      <p>Missão, visão e valores da ONG. Breve histórico e dados de impacto.</p>
+    <section class="section">
+      <h2>Missão, Visão e Valores</h2>
+      <p><strong>Missão:</strong> Promover o desenvolvimento humano e social.</p>
+      <p><strong>Visão:</strong> Ser referência em projetos de impacto comunitário.</p>
+      <p><strong>Valores:</strong> Solidariedade, Transparência e Respeito.</p>
     </section>
 
-    <section class="contact container" aria-labelledby="contato-title">
-      <h2 id="contato-title">Contato</h2>
-      <address>
-        Rua Exemplo, 123 — São Paulo, SP<br />
-        Telefone: (11) 99999-9999<br />
-        Email: contato@ongexemplo.org.br
-      </address>
-    </section>
-
-    <section class="transparency container" aria-labelledby="relatorios-title">
-      <h2 id="relatorios-title">Transparência</h2>
-      <p>Relatórios públicos, prestação de contas e conquistas.</p>
+    <section class="section">
+      <h2>Entre em Contato</h2>
+      <p><strong>E-mail:</strong> contato@ongesperancaviva.org.br</p>
+      <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      <p><strong>Endereço:</strong> Rua da Esperança, 100 — São Paulo/SP</p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>© <span id="year"></span> ONG Esperança Viva — Todos os direitos reservados.</p>
-      <nav aria-label="Redes sociais">
-        <ul class="socials">
-          <li><a href="#" aria-label="Facebook">Fb</a></li>
-          <li><a href="#" aria-label="Instagram">Ig</a></li>
-        </ul>
-      </nav>
-    </div>
+  <footer>
+    © 2025 ONG Esperança Viva — Todos os direitos reservados.
   </footer>
 
   <script>
-    // ano dinâmico
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // menu toggle simples (acessível)
-    const btn = document.getElementById('menu-toggle');
-    const nav = document.getElementById('main-nav');
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.style.display = expanded ? 'none' : 'block';
+    // Menu responsivo
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+
+    // Verificação se imagens carregaram corretamente
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        img.src = 'https://via.placeholder.com/400x250?text=Imagem+Indisponível';
+      });
     });
   </script>
 </body>
