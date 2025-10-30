@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ONG Esperança Viva</title>
 
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+
   <!-- Fonte moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,22 +19,42 @@
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background-color: #f5f5f5;
+      background-color: #f3f4f6;
       color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     /* ====== CABEÇALHO ====== */
     header {
-      background-color: #1b5e20;
+      background-color: #14532d;
       color: #fff;
-      padding: 15px 25px;
+      padding: 10px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      height: 45px;
+      width: 45px;
+      object-fit: contain;
+      border-radius: 50%;
+      background-color: #fff;
+      padding: 4px;
     }
 
     .menu-toggle {
@@ -40,48 +63,49 @@
       background: none;
       border: none;
       color: #fff;
-      display: none;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
     }
 
     .site-title {
       font-weight: 700;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
       color: #fff;
+      letter-spacing: 0.5px;
     }
 
     nav {
       display: flex;
       gap: 25px;
+      transition: all 0.3s ease;
     }
 
     nav a {
       color: #fff;
-      text-decoration: none;
       font-weight: 500;
-      transition: all 0.3s;
-      padding: 5px 8px;
+      transition: all 0.3s ease;
+      padding: 6px 10px;
       border-radius: 6px;
     }
 
     nav a:hover {
-      background-color: #2e7d32;
-      color: #e8f5e9;
+      background-color: #166534;
+      color: #d1fae5;
     }
 
     /* ====== MENU RESPONSIVO ====== */
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
       nav {
         display: none;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: #1b5e20;
+        background-color: #14532d;
         flex-direction: column;
         align-items: center;
         padding: 15px 0;
@@ -115,7 +139,7 @@
 
     .intro h1 {
       font-size: 2.5rem;
-      color: #1b5e20;
+      color: #14532d;
       line-height: 1.2;
       margin-bottom: 15px;
     }
@@ -123,10 +147,11 @@
     .intro p {
       font-size: 1.1rem;
       margin-bottom: 20px;
+      color: #555;
     }
 
     .btn {
-      background-color: #2e7d32;
+      background-color: #166534;
       color: #fff;
       border: none;
       padding: 12px 24px;
@@ -134,11 +159,12 @@
       text-decoration: none;
       font-weight: 600;
       display: inline-block;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #1b5e20;
+      background-color: #0f3d23;
+      transform: scale(1.03);
     }
 
     .intro img {
@@ -158,7 +184,7 @@
     }
 
     .section h2 {
-      color: #1b5e20;
+      color: #14532d;
       font-size: 1.8rem;
       margin-bottom: 15px;
     }
@@ -197,17 +223,27 @@
     }
 
     .card h3 {
-      color: #2e7d32;
+      color: #166534;
       margin-bottom: 8px;
     }
 
     footer {
-      background-color: #1b5e20;
+      background-color: #0f3d23;
       color: #fff;
       text-align: center;
       padding: 20px 0;
       margin-top: 50px;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #86efac;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     /* ====== ANIMAÇÃO ====== */
@@ -220,8 +256,11 @@
 <body>
   <!-- ====== CABEÇALHO ====== -->
   <header>
-    <h1 class="site-title">ONG Esperança Viva</h1>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="header-left">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <img src="assets/images/logo.png" alt="Logo ONG" class="logo">
+      <h1 class="site-title">ONG Esperança Viva</h1>
+    </div>
     <nav id="nav-menu">
       <a href="index.html">Início</a>
       <a href="projetos.html">Projetos</a>
@@ -277,7 +316,8 @@
   </main>
 
   <footer>
-    © 2025 ONG Esperança Viva — Todos os direitos reservados.
+    © 2025 ONG Esperança Viva — Todos os direitos reservados. <br>
+    Desenvolvido por <a href="#">Mariana Solene</a>
   </footer>
 
   <script>
