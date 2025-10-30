@@ -1,78 +1,137 @@
-:root{
-  /* Design system: variáveis */
-  --brand-1: #0b6d4a;
-  --brand-2: #0f9d58;
-  --accent: #f4b400;
-  --neutral-1: #ffffff;
-  --neutral-2: #f5f5f5;
-  --text: #222222;
-  --muted: #666666;
+/* ===============================
+   SISTEMA DE DESIGN - ONG ESPERANÇA VIVA
+==================================*/
 
-  --fs-xl: 32px;
-  --fs-lg: 20px;
-  --fs-md: 16px;
-  --fs-sm: 14px;
-  --fs-xs: 12px;
-
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-
-  --radius: 12px;
-  --max-width: 1100px;
+/* 🎨 Paleta de Cores */
+:root {
+  --cor-primaria: #1e88e5;
+  --cor-secundaria: #43a047;
+  --cor-neutra-clara: #f5f5f5;
+  --cor-neutra: #e0e0e0;
+  --cor-texto: #333;
+  --cor-branca: #fff;
+  --cor-escura: #222;
 }
 
-/* Reset básico */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;color:var(--text);background:var(--neutral-2);line-height:1.4}
-.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-2)}
+/* Tipografia e espaçamento */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--cor-neutra-clara);
+  color: var(--cor-texto);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-/* Skip link */
-.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{left:var(--space-2);top:var(--space-2);background:#fff;padding:8px;border-radius:4px;z-index:999}
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: 16px 0;
+}
 
-/* Header */
-.site-header{background:var(--neutral-1);border-bottom:1px solid #e6e6e6}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:var(--space-2) 0}
-.logo{height:48px}
+header img {
+  width: 160px;
+  display: block;
+  margin: 0 auto;
+}
 
-/* Nav */
-.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:var(--space-2)}
-.nav-list a{text-decoration:none;color:var(--text);padding:8px;border-radius:6px}
-.nav-list a:focus,.nav-list a:hover{background:var(--neutral-2)}
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
 
-/* Hero */
-.hero{background-image:linear-gradient(180deg, rgba(11,109,74,0.9), rgba(15,157,88,0.9)), url("../assets/images/hero.jpg");background-size:cover;background-position:center;color:white;padding:var(--space-5) 0}
-.hero h1{font-size:var(--fs-xl);margin:0 0 var(--space-2)}
-.btn{display:inline-block;background:var(--brand-2);color:white;padding:12px 18px;border-radius:10px;text-decoration:none}
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
 
-/* Grid de projetos */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-3);padding:0;margin:0;list-style:none}
-.card{background:white;border-radius:12px;padding:var(--space-2);box-shadow:0 2px 8px rgba(0,0,0,0.05)}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+nav ul li a {
+  color: var(--cor-branca);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-/* Forms */
-label{display:block;margin-top:var(--space-2);font-size:var(--fs-sm)}
-input,select,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-top:6px;font-size:var(--fs-md)}
-input:focus,select:focus,textarea:focus{outline:3px solid rgba(15,157,88,0.12)}
+nav ul li a:hover {
+  color: var(--cor-neutra-clara);
+  text-decoration: underline;
+}
 
-/* Footer */
-.site-footer{background:#fafafa;border-top:1px solid #e6e6e6;padding:var(--space-3) 0;text-align:center;font-size:var(--fs-sm);color:var(--muted)}
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e88e5, #43a047);
+  color: var(--cor-branca);
+}
 
-/* Responsive breakpoints (mínimo 5 breakpoints) */
-@media (max-width:1200px){:root{--fs-xl:28px}}
-@media (max-width:992px){.nav-list{display:none}}
-@media (max-width:768px){:root{--fs-xl:24px;--space-4:24px}}
-@media (max-width:576px){.hero h1{font-size:20px}.card img{height:140px}}
-@media (max-width:360px){:root{--fs-sm:13px;--fs-xs:11px}}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
 
-/* Estados de botão */
-button[disabled],.btn[aria-disabled="true"]{opacity:.6;pointer-events:none}
+.hero p {
+  font-size: 1.2rem;
+}
 
-/* High contrast mode (modo escuro/alto contraste básico) */
-@media (prefers-contrast: more){
-  :root{--brand-1:#003b29;--brand-2:#006b3d}
-  body{background:#fff}
+.btn {
+  display: inline-block;
+  background-color: var(--cor-branca);
+  color: var(--cor-primaria);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--cor-neutra);
+}
+
+/* Sessões principais */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: var(--cor-branca);
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: var(--cor-primaria);
+  margin-bottom: 16px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--cor-escura);
+  color: var(--cor-branca);
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--cor-secundaria);
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  nav ul li {
+    display: block;
+    margin: 8px 0;
+  }
 }
